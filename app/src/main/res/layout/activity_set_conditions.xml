@@ -52,7 +52,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="Set Riding Conditions"
         android:id="@+id/submitConditionsButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
