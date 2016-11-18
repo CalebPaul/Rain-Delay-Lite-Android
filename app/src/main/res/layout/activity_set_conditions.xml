@@ -27,23 +27,24 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="lowest commute temp"
+        android:hint="highest temp"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/tempLo"
+        android:id="@+id/tempHi"
         android:layout_below="@+id/windSpeed"
-        android:layout_alignRight="@+id/windSpeed"
-        android:layout_alignEnd="@+id/windSpeed" />
+        android:layout_alignLeft="@+id/windSpeed"
+        android:layout_alignStart="@+id/windSpeed" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="highest commute temp"
+        android:hint="lowest temp (brrr)"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/tempHi"
-        android:layout_below="@+id/tempLo"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/tempLo"
+        android:layout_below="@+id/tempHi"
+        android:layout_alignLeft="@+id/tempHi"
+        android:layout_alignStart="@+id/tempHi" />
 
     <Button
         android:layout_width="match_parent"

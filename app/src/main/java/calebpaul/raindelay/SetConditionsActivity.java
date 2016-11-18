@@ -3,9 +3,12 @@ package calebpaul.raindelay;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -26,19 +29,43 @@ public class SetConditionsActivity extends AppCompatActivity {
         mSubmitConditionsButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                String name = mConditionName.getText().toString();
-                Integer windSpeed = Integer.parseInt(String.valueOf(mMaxWindSpeed.getText()));
-                Integer maxTemp = Integer.parseInt(String.valueOf(mMaxTemp.getText()));
-                Integer minTemp = Integer.parseInt(String.valueOf(mMinTemp.getText()));
 
-                Intent intent = new Intent(SetConditionsActivity.this, ViewConditionsActivity.class);
+                /*Validate Fields by getting text, converting to string, trimming whitespace chars, and evaluating length.
+                 * Adds toast to prompt user to input values. */
 
-                intent.putExtra("name", name);
-                intent.putExtra("windSpeed", windSpeed);
-                intent.putExtra("maxTemp", maxTemp);
-                intent.putExtra("minTemp", minTemp);
+                if (mConditionName.getText().toString().trim().length() == 0) {
+                    Toast.makeText(SetConditionsActivity.this, "Please enter a name.", Toast.LENGTH_SHORT).show();
+                    return;
 
-                startActivity(intent);
+                } else if (mMaxWindSpeed.getText().toString().trim().length() == 0) {
+                    Toast.makeText(SetConditionsActivity.this, "Please enter max wind speed.", Toast.LENGTH_SHORT).show();
+                    return;
+
+                } else if ((mMaxTemp.getText().toString().trim().length() == 0)) {
+
+                    Toast.makeText(SetConditionsActivity.this, "Please enter max temp.", Toast.LENGTH_SHORT).show();
+                    return;
+
+                } else if ((mMaxTemp.getText().toString().trim().length() == 0)) {
+
+                    Toast.makeText(SetConditionsActivity.this, "Please enter min temp.", Toast.LENGTH_SHORT).show();
+                    return;
+
+                } else {
+                    String name = mConditionName.getText().toString();
+                    Integer windSpeed = Integer.parseInt(String.valueOf(mMaxWindSpeed.getText()));
+                    Integer maxTemp = Integer.parseInt(String.valueOf(mMaxTemp.getText()));
+                    Integer minTemp = Integer.parseInt(String.valueOf(mMinTemp.getText()));
+
+                    Intent intent = new Intent(SetConditionsActivity.this, ViewConditionsActivity.class);
+
+                    intent.putExtra("name", name);
+                    intent.putExtra("windSpeed", windSpeed);
+                    intent.putExtra("maxTemp", maxTemp);
+                    intent.putExtra("minTemp", minTemp);
+
+                    startActivity(intent);
+                }
             }
         });
     }
