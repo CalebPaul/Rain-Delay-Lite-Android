@@ -1,5 +1,6 @@
 package calebpaul.raindelay;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,13 +26,19 @@ public class SetConditionsActivity extends AppCompatActivity {
         mSubmitConditionsButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                //String
-                //Integer
+                String name = mConditionName.getText().toString();
+                Integer windSpeed = Integer.parseInt(String.valueOf(mMaxWindSpeed.getText()));
+                Integer maxTemp = Integer.parseInt(String.valueOf(mMaxTemp.getText()));
+                Integer minTemp = Integer.parseInt(String.valueOf(mMinTemp.getText()));
 
-                //Intent intent
-                //intent.putExtra()
+                Intent intent = new Intent(SetConditionsActivity.this, ViewConditionsActivity.class);
 
-                //startActivity(intent)
+                intent.putExtra("name", name);
+                intent.putExtra("windSpeed", windSpeed);
+                intent.putExtra("maxTemp", maxTemp);
+                intent.putExtra("minTemp", minTemp);
+
+                startActivity(intent);
             }
         });
     }
