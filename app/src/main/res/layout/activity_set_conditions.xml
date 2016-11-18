@@ -9,4 +9,52 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="calebpaul.raindelay.SetConditionsActivity">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/conditionName"
+        android:hint="type of ride 'commute'"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="max wind speed"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/windSpeed"
+        android:layout_below="@+id/conditionName"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="lowest commute temp"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/tempLo"
+        android:layout_below="@+id/windSpeed"
+        android:layout_alignRight="@+id/windSpeed"
+        android:layout_alignEnd="@+id/windSpeed" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="highest commute temp"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/tempHi"
+        android:layout_below="@+id/tempLo"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/submitConditionsButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
