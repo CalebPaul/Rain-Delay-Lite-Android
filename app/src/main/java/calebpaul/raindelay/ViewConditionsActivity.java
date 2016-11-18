@@ -24,9 +24,8 @@ public class ViewConditionsActivity extends AppCompatActivity {
 
         String name = intent.getStringExtra("name");
         String windSpeed = String.valueOf(intent.getIntExtra ("windSpeed", 20));
-        Log.v("ViewConditionsActivity", "onCreate: " + windSpeed);
-        String maxTemp = intent.getStringExtra("maxTemp");
-        String minTemp = intent.getStringExtra("minTemp");
+        String maxTemp = String.valueOf(intent.getIntExtra("maxTemp", 32));
+        String minTemp = String.valueOf(intent.getIntExtra("minTemp", 8));
 
         mConditionNameView.setText(name);
         mWindView.setText(windSpeed);
