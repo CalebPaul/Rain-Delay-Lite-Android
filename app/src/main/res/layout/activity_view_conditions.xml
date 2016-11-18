@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="placeholder name"
-        android:id="@+id/displayConditionName"
+        android:id="@+id/conditionNameTextView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="84dp" />
@@ -18,23 +18,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="placeholder wind"
-        android:id="@+id/displayMaxWind"
-        android:layout_below="@+id/displayConditionName"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/maxWindTextView"
+        android:layout_below="@+id/conditionNameTextView"
+        android:layout_alignLeft="@+id/conditionNameTextView"
+        android:layout_alignStart="@+id/conditionNameTextView" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="placeholder max temp"
-        android:id="@+id/displayMaxTemp"
-        android:layout_below="@+id/displayMaxWind"
+        android:id="@+id/maxTempTextView"
+        android:layout_below="@+id/maxWindTextView"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="placeholder min temp"
-        android:id="@+id/displayMinTemp"
-        android:layout_below="@+id/displayMaxTemp"
+        android:id="@+id/minTempTextView"
+        android:layout_below="@+id/maxTempTextView"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
