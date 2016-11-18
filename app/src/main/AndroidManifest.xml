@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SetConditionsActivity"></activity>
+        <activity android:name=".SetConditionsActivity" />
+        <activity android:name=".ViewConditionsActivity"></activity>
     </application>
 
 </manifest>

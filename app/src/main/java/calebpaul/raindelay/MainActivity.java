@@ -10,7 +10,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
-    @Bind(R.id.setWeatherButton) Button mSetConditionsButton;
+    @Bind(R.id.setWeatherButton) Button mConditionsButton;
     @Bind(R.id.viewConditionsButton) Button mViewConditionsButton;
 
     @Override
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        mSetConditionsButton.setOnClickListener(new View.OnClickListener() {
+        mConditionsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SetConditionsActivity.class);
