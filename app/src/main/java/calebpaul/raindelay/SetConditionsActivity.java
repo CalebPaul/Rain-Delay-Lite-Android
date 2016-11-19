@@ -19,6 +19,7 @@ public class SetConditionsActivity extends AppCompatActivity {
     @Bind(R.id.tempHi) EditText mMaxTemp;
     @Bind(R.id.tempLo) EditText mMinTemp;
     @Bind(R.id.submitConditionsButton) Button mSubmitConditionsButton;
+    @Bind(R.id.exampleConditionsButton) Button mExampleConditionsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

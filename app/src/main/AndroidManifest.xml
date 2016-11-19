@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".SetConditionsActivity" />
-        <activity android:name=".ViewConditionsActivity"></activity>
+        <activity android:name=".ViewConditionsActivity" />
+        <activity android:name=".ExampleConditionsActivity"></activity>
     </application>
 
 </manifest>
