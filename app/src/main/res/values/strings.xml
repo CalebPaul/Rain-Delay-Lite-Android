@@ -8,15 +8,15 @@
     </string-array>
 
     <string-array name="rider_details">
-        <item name="fair_weather_rider">Max Wind Speed: 8mph
-                                        Max Temp: 27 celsius
+        <item name="fair_weather_rider">Max Wind Speed: 8mph \r\n
+                                        Max Temp: 27 celsius \r\n
                                         Min Temp: 15 celsius</item>
-        <item name="committed-commuter">Max Wind Speed: 15mph
-                                        Max Temp: 30 celsius
+        <item name="committed-commuter">Max Wind Speed: 15mph \r\n
+                                        Max Temp: 30 celsius \r\n
                                         Min Temp: 10 celsius</item>
-        <item name="year_round_road_warrior">Max Wind Speed: 25mph
-                                        Max Temp: 35 celsius
-                                        Min Temp: 1 celsius</item>
+        <item name="year_round_road_warrior">Max Wind Speed: 25mph \r\n
+                                        Max Temp: 35 celsius \r\n
+                                        Min Temp: Freezing!</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
