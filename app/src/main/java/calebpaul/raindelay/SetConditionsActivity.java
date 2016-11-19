@@ -69,5 +69,13 @@ public class SetConditionsActivity extends AppCompatActivity {
                 }
             }
         });
+
+        mExampleConditionsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SetConditionsActivity.this, ExampleConditionsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

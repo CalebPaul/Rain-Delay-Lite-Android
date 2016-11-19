@@ -7,7 +7,7 @@
         <item name="year_round_road_warrior">Year Round Road Warrior</item>
     </string-array>
 
-    <string name="rider_details">
+    <string-array name="rider_details">
         <item name="fair_weather_rider">Max Wind Speed: 8mph
                                         Max Temp: 27 celsius
                                         Min Temp: 15 celsius</item>
@@ -17,5 +17,9 @@
         <item name="year_round_road_warrior">Max Wind Speed: 25mph
                                         Max Temp: 35 celsius
                                         Min Temp: 1 celsius</item>
-    </string>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ok">Ok</string>
 </resources>
