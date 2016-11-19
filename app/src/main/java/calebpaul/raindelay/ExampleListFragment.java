@@ -29,11 +29,11 @@ public class ExampleListFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-        String exampleName = getArguments().getString("itemName");
+        String exampleName = getArguments().getString("exampleName");
 
-        int itemIndex = Arrays.asList(getResources().getStringArray(R.array.rider_types)).indexOf(exampleName);
+        int riderIndex = Arrays.asList(getResources().getStringArray(R.array.rider_types)).indexOf(exampleName);
         String[] riderDetails = getResources().getStringArray(R.array.rider_details);
-        String riderDetail = riderDetails[itemIndex];
+        String riderDetail = riderDetails[riderIndex];
 
         builder.setMessage(riderDetail)
                 .setTitle(exampleName)
