@@ -1,7 +1,7 @@
 # _Rain Delay_
 
 #### _11-18-2016_
-![project screenshot](/resources/img/screenshot.png)
+![project screenshot](app/src/main/res/drawable/screenshot.png)
 #### By _**Caleb Paul**_
 
 ## Description
