@@ -36,6 +36,7 @@ _App is in process, API functionality not yet integrated._
 * On Set Conditions Activity:
     - App displays input fields for riding condition parameters, and two buttons; one for setting conditions, and one for example conditions.
     - App takes input from user and passes data to another ViewConditionsActivity where it is displayed.
+        * App validates form inputs and alerts user with toasts if fields are blank upon submission.
     - App passes inputted passes data to ViewConditionsActivity on 'Set Riding Conditions' button press.
     - App displays list of example riding conditions, in a new activity on 'Set Riding Conditions' button press.  
         * Details are displayed 'on Click' in dialog fragment.    
