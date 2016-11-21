@@ -22,8 +22,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Rain Delay"
-        android:textSize="30sp"
-        android:layout_marginTop="20dp"
+        android:textSize="50sp"
+        android:layout_marginTop="25dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -31,17 +31,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Current Weather Placeholder"
-        android:id="@+id/textView"
+        android:text="Plan your commute."
+        android:id="@+id/copyTextView"
         android:layout_below="@+id/mainTitleText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="88dp" />
+        android:layout_marginTop="50dp" />
 
     <Button
         android:id="@+id/setWeatherButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Set Riding Conditions"
+        android:background="@color/accent"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -51,6 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="View 5-day Forecast"
+        android:background="@color/accent"
         android:layout_alignBottom="@+id/setWeatherButton"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
