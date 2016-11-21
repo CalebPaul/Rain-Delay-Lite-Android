@@ -20,19 +20,20 @@
         <activity android:name=".SetConditionsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="calebpaul.raindelay.MainActivity"></meta-data>
+                android:value="calebpaul.raindelay.MainActivity"/>
         </activity>
+
 
         <activity android:name=".ViewConditionsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="calebpaul.raindelay.SetConditionsActivity"></meta-data>
+                android:value="calebpaul.raindelay.SetConditionsActivity"/>
         </activity>
 
         <activity android:name=".ExampleConditionsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="calebpaul.raindelay.SetConditionsActivity"></meta-data>
+                android:value="calebpaul.raindelay.SetConditionsActivity"/>
         </activity>
     </application>
 
