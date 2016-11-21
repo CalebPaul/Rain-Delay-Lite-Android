@@ -47,7 +47,7 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:id="@+id/viewConditionsButton"
+        android:id="@+id/viewForecastButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="View 5-day Forecast"
