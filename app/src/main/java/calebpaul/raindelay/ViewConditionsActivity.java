@@ -27,9 +27,9 @@ public class ViewConditionsActivity extends AppCompatActivity {
         String maxTemp = String.valueOf(intent.getIntExtra("maxTemp", 32));
         String minTemp = String.valueOf(intent.getIntExtra("minTemp", 8));
 
-        mConditionNameView.setText(name);
-        mWindView.setText(windSpeed);
-        mMaxTempView.setText(maxTemp);
-        mMinTempView.setText(minTemp);
+        mConditionNameView.setText("Ride Type: "+name);
+        mWindView.setText("Max Wind Speed: "+windSpeed);
+        mMaxTempView.setText("Max Temp (celsius): "+maxTemp);
+        mMinTempView.setText("Min Temp (celsius): "+minTemp);
     }
 }
