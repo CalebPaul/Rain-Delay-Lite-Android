@@ -13,3 +13,7 @@
  * MOSTLY? Required functionality was present by the 5:00pm Friday deadline.
 
  * Project demonstrates understanding of this week’s concepts. If prompted, you can discuss your code with an instructor using correct terminology.
+ 
+ ### Add: 
+  * "Powered by DarkSky" link
+  * Air Pollution/Allergens
