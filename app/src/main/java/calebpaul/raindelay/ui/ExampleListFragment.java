@@ -1,4 +1,4 @@
-package calebpaul.raindelay;
+package calebpaul.raindelay.ui;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.Arrays;
+
+import calebpaul.raindelay.R;
 
 
 /**

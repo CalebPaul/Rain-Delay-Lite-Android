@@ -1,4 +1,4 @@
-package calebpaul.raindelay;
+package calebpaul.raindelay.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import calebpaul.raindelay.R;
 
 public class ViewConditionsActivity extends AppCompatActivity {
     @Bind(R.id.conditionNameTextView) TextView mConditionNameView;

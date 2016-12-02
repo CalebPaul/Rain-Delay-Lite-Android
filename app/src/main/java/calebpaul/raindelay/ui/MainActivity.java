@@ -1,4 +1,4 @@
-package calebpaul.raindelay;
+package calebpaul.raindelay.ui;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import calebpaul.raindelay.R;
 
 public class MainActivity extends AppCompatActivity {
     @Bind(R.id.mainTitleText) TextView mTitleText;

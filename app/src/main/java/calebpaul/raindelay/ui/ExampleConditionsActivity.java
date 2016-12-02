@@ -1,4 +1,4 @@
-package calebpaul.raindelay;
+package calebpaul.raindelay.ui;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import calebpaul.raindelay.R;
 
 public class ExampleConditionsActivity extends AppCompatActivity implements ExampleListFragment.OnFragmentInteractionListener {
     @Bind(R.id.examplesListView) ListView mExamplesListView;
