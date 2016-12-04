@@ -4,7 +4,7 @@ package calebpaul.raindelay.models;
  * Created by calebpaul on 12/3/16.
  */
 public class Forecast {
-    private String mTime;
+    private int mTime;
     private String mSummary;
     private String mIcon;
     private int mTemperature;
@@ -12,7 +12,7 @@ public class Forecast {
     private int mRainIntensity;
     private int mWindSpeed;
 
-    public Forecast(String mTime, String mSummary, String mIcon, int mTemperature, int mRainProbability, int mRainIntensity, int mWindSpeed) {
+    public Forecast(int mTime, String mSummary, String mIcon, int mTemperature, int mRainProbability, int mRainIntensity, int mWindSpeed) {
         this.mTime = mTime;
         this.mSummary = mSummary;
         this.mIcon = mIcon;
@@ -22,31 +22,31 @@ public class Forecast {
         this.mWindSpeed = mWindSpeed;
     }
 
-    public String getmTime() {
+    public int getTime() {
         return mTime;
     }
 
-    public String getmSummary() {
+    public String getSummary() {
         return mSummary;
     }
 
-    public String getmIcon() {
+    public String getIcon() {
         return mIcon;
     }
 
-    public int getmTemperature() {
+    public int getTemperature() {
         return mTemperature;
     }
 
-    public int getmRainProbability() {
+    public int getRainProbability() {
         return mRainProbability;
     }
 
-    public int getmRainIntensity() {
+    public int getRainIntensity() {
         return mRainIntensity;
     }
 
-    public int getmWindSpeed() {
+    public int getWindSpeed() {
         return mWindSpeed;
     }
 }

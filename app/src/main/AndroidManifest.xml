@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="calebpaul.raindelay">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -22,20 +22,22 @@
         <activity android:name=".ui.SetConditionsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.MainActivity"/>
+                android:value=".ui.MainActivity" />
         </activity>
-
-
         <activity android:name=".ui.ViewUserConditionsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.SetConditionsActivity"/>
+                android:value=".ui.SetConditionsActivity" />
         </activity>
-
         <activity android:name=".ui.ExampleConditionsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.SetConditionsActivity"/>
+                android:value=".ui.SetConditionsActivity" />
+        </activity>
+        <activity android:name=".ui.ViewForecastActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.MainActivity" />
         </activity>
     </application>
 

@@ -2,6 +2,7 @@ package calebpaul.raindelay.services;
 
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -49,8 +50,37 @@ public class DarkSkyService {
 
             if (response.isSuccessful()) {
                 JSONObject forecasts = new JSONObject(jsonData);
+                JSONObject today = forecasts.getJSONObject("currently");
+                JSONArray forecastsArray = forecasts.getJSONObject("daily").getJSONArray("data");
 
-                Log.v(TAG, "forecasts: " + forecasts);
+                Log.v(TAG, "CURRENTLY: " + String.valueOf(today));
+                Log.v(TAG, "FORECASTS: " + forecasts);
+
+                int time = today.getInt("time");
+                String summary = today.getString("summary");
+                String icon = today.getString("icon");
+                int temp = today.getInt("temperature");
+                int rainProbability = today.getInt("precipProbability");
+                int rainIntensity = today.getInt("precipIntensity");
+                int windSpeed = today.getInt("windSpeed");
+
+                Forecast currentForecast = new Forecast(time, summary, icon, temp, rainProbability, rainIntensity, windSpeed);
+                newForecasts.add(currentForecast);
+                Log.v(TAG, "FORECAST ARRAY SIZE: " + String.valueOf(newForecasts.size()));
+
+                for (int i = 0; i < forecastsArray.length(); i++) {
+                    int dailyTime = forecastsArray.getJSONObject(i).getInt("time");
+                    String dailySummary = forecastsArray.getJSONObject(i).getString("summary");
+                    String dailyIcon = forecastsArray.getJSONObject(i).getString("icon");
+                    int dailyTemp = (forecastsArray.getJSONObject(i).getInt("temperatureMin") + forecastsArray.getJSONObject(i).getInt("temperatureMax") / 2); //This is not accurate at all, it's a workaround.
+                    int dailyRainProbability = forecastsArray.getJSONObject(i).getInt("precipProbability");
+                    int dailyRainIntensity = forecastsArray.getJSONObject(i).getInt("precipIntensity");
+                    int dailyWindSpeed = forecastsArray.getJSONObject(i).getInt("windSpeed");
+
+                    Forecast dailyForecast = new Forecast(dailyTime, dailySummary, dailyIcon, dailyTemp, dailyRainProbability, dailyRainIntensity, dailyWindSpeed);
+                    newForecasts.add(dailyForecast);
+                    Log.v(TAG, "FORECAST ARRAY SIZE IN LOOP: " + String.valueOf(newForecasts.size()));
+                }
 
             }
 

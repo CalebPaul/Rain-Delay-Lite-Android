@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Plan your commute."
+        android:text="Plan your commute tho."
         android:id="@+id/textView"
         android:layout_below="@+id/mainTitleText"
         android:layout_centerHorizontal="true"
