@@ -3,14 +3,13 @@ package calebpaul.raindelay.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import calebpaul.raindelay.R;
 
-public class ViewConditionsActivity extends AppCompatActivity {
+public class ViewUserConditionsActivity extends AppCompatActivity {
     @Bind(R.id.conditionNameTextView) TextView mConditionNameView;
     @Bind(R.id.maxWindTextView) TextView mWindView;
     @Bind(R.id.maxTempTextView) TextView mMaxTempView;
@@ -19,7 +18,7 @@ public class ViewConditionsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_conditions);
+        setContentView(R.layout.activity_view_user_conditions);
         ButterKnife.bind(this);
         Intent intent = getIntent();
 

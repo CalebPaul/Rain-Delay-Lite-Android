@@ -57,7 +57,7 @@ public class SetConditionsActivity extends AppCompatActivity {
                     Integer maxTemp = Integer.parseInt(String.valueOf(mMaxTemp.getText()));
                     Integer minTemp = Integer.parseInt(String.valueOf(mMinTemp.getText()));
 
-                    Intent intent = new Intent(SetConditionsActivity.this, ViewConditionsActivity.class);
+                    Intent intent = new Intent(SetConditionsActivity.this, ViewUserConditionsActivity.class);
 
                     intent.putExtra("name", name);
                     intent.putExtra("windSpeed", windSpeed);
