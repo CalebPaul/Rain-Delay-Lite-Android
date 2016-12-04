@@ -2,7 +2,14 @@ package calebpaul.raindelay.services;
 
 import android.util.Log;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
 import calebpaul.raindelay.Constants;
+import calebpaul.raindelay.models.Forecast;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.HttpUrl;
@@ -34,7 +41,25 @@ public class DarkSkyService {
         call.enqueue(callback);
     }
 
-//    public String processForecast(Response response){
-//
-//    }
+    public ArrayList<Forecast> processForecast(Response response){
+        ArrayList<Forecast> newForecasts = new ArrayList<>();
+
+        try {
+            String jsonData = response.body().string();
+
+            if (response.isSuccessful()) {
+                JSONObject forecasts = new JSONObject(jsonData);
+
+                Log.v(TAG, "forecasts: " + forecasts);
+
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return newForecasts;
+    }
 }
