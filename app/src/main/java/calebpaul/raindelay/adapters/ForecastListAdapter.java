@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,7 +66,6 @@ public class ForecastListAdapter extends RecyclerView.Adapter<ForecastListAdapte
 
         @Override
         public void onClick(View view) {
-            Log.v("ForecastListActivity", "Clicky");
             Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://darksky.net"));
             mContext.startActivity(webIntent);
         }

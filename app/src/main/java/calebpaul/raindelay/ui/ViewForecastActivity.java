@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,10 +29,10 @@ public class ViewForecastActivity extends AppCompatActivity {
     String latitude = "45.52";
     String longitude = "122.67";
     String userLatLong = latitude + "," + longitude;
+    //will get location info from phone's gps in the future.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.v(TAG, "IN ON CREATE");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_forecast);
         ButterKnife.bind(this);
@@ -42,19 +41,16 @@ public class ViewForecastActivity extends AppCompatActivity {
     }
 
     private void getForecasts() {
-        Log.v(TAG, "IN GET FORECASTS");
         final DarkSkyService darkSkyService = new DarkSkyService();
         darkSkyService.getForecast(userLatLong, new Callback() {
 
             @Override
             public void onFailure(Call call, IOException e) {
-                Log.v(TAG, "IN ON FAILURE");
                 e.printStackTrace();
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                Log.v(TAG, "IN ON RESPONSE");
                 mForecasts = darkSkyService.processForecast(response);
 
                 ViewForecastActivity.this.runOnUiThread(new Runnable() {
