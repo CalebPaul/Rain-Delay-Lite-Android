@@ -48,9 +48,6 @@ public class ForecastListAdapter extends RecyclerView.Adapter<ForecastListAdapte
         @Bind(R.id.temperatureTextView) TextView mTemperatureTextView;
         @Bind(R.id.windSpeedTextView) TextView mWindSpeedTextView;
 
-
-        private Context mContext;
-
         public ForecastViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
@@ -59,8 +56,8 @@ public class ForecastListAdapter extends RecyclerView.Adapter<ForecastListAdapte
 
         public void bindForecast(Forecast forecast) {
             mSummaryTextView.setText(forecast.getSummary());
-            mTemperatureTextView.setText(String.valueOf(forecast.getTemperature()));
-            mWindSpeedTextView.setText(String.valueOf(forecast.getWindSpeed()));
+            mTemperatureTextView.setText("Temp approx " + String.valueOf(forecast.getTemperature()) + " Degrees");
+            mWindSpeedTextView.setText("Winds up to " + String.valueOf(forecast.getWindSpeed()) + " MPH");
 
         }
     }
