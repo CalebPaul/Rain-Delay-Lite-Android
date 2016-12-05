@@ -25,12 +25,14 @@ _It is designed for bike commuters who need to wake up at a different time if th
 
 ## Known Bugs
 
-_App is in process, API functionality not yet integrated._
+_App is currently in process, and incomplete._
+_Latitude and longitude values for API call are currently hard coded in._
+_Retrieval of latitude and longitude from device GPS is not yet implemented._
 
 ## Specifications
 * On opening app:
     - App displays main activity with a button for viewing a 5 day forecast, and a button for setting riding conditions.
-    - '5 day forecast' button triggers a toast letting the user know that the feature is coming soon.
+    - '7 day forecast' button displays recycler view with weather summary, wind speed, and temperature values.
     - 'set riding conditions' button takes user to a new activity with input fields.
 
 * On Set Conditions Activity:
