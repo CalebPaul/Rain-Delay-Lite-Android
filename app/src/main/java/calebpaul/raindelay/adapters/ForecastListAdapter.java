@@ -40,13 +40,14 @@ public class ForecastListAdapter extends RecyclerView.Adapter<ForecastListAdapte
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mForecasts.size();
     }
 
     public class ForecastViewHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.summaryTextView) TextView mSummaryTextView;
-        @Bind(R.id.windSpeedTextView) TextView mWindSpeedTextView;
         @Bind(R.id.temperatureTextView) TextView mTemperatureTextView;
+        @Bind(R.id.windSpeedTextView) TextView mWindSpeedTextView;
+
 
         private Context mContext;
 
@@ -58,8 +59,9 @@ public class ForecastListAdapter extends RecyclerView.Adapter<ForecastListAdapte
 
         public void bindForecast(Forecast forecast) {
             mSummaryTextView.setText(forecast.getSummary());
-            mWindSpeedTextView.setText(forecast.getWindSpeed());
-            mTemperatureTextView.setText(forecast.getTemperature());
+            mTemperatureTextView.setText(String.valueOf(forecast.getTemperature()));
+            mWindSpeedTextView.setText(String.valueOf(forecast.getWindSpeed()));
+
         }
     }
 }
