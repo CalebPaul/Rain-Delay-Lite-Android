@@ -6,6 +6,6 @@ package calebpaul.raindelay;
 public class Constants {
     public static final String API_KEY = BuildConfig.API_KEY;
     public static final String DARKSKY_BASE_URL = "https://api.darksky.net/forecast/";
-
+    public static final String PREFERENCES_LOCATION_KEY = "location";
 
 }

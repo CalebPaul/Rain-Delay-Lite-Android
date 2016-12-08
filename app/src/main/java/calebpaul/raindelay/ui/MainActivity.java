@@ -1,8 +1,10 @@
 package calebpaul.raindelay.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -12,8 +14,11 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import calebpaul.raindelay.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = MainActivity.class.getSimpleName();
+
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
 
     @Bind(R.id.mainTitleText) TextView mTitleText;
     @Bind(R.id.setWeatherButton) Button mConditionsButton;
@@ -24,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
 
         Typeface Voltaire = Typeface.createFromAsset(getAssets(), "fonts/Voltaire-Regular.otf");
         mTitleText.setTypeface(Voltaire);
@@ -36,13 +44,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mViewForecastButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ViewForecastActivity.class);
-                startActivity(intent);
-            }
-        });
+//        mViewForecastButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(MainActivity.this, ViewForecastActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
+        mViewForecastButton.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view == mViewForecastButton) {
+            //String location = mLocationEditText.getText().toSTring();
+        }
     }
 }
