@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(MainActivity.this, SetConditionsActivity.class);
             startActivity(intent);
         }
-
     }
 
     private void addToSharedPreferences(String location) {
