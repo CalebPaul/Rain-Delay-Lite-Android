@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private SharedPreferences.Editor mEditor;
 
     @Bind(R.id.mainTitleText) TextView mTitleText;
-    @Bind(R.id.setWeatherButton) Button mConditionsButton;
+    @Bind(R.id.setWeatherButton) Button mSetConditionsButton;
     @Bind(R.id.viewForecastButton) Button mViewForecastButton;
 
     @Override
@@ -36,22 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Typeface Voltaire = Typeface.createFromAsset(getAssets(), "fonts/Voltaire-Regular.otf");
         mTitleText.setTypeface(Voltaire);
 
-        mConditionsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SetConditionsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-//        mViewForecastButton.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this, ViewForecastActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-
+        mSetConditionsButton.setOnClickListener(this);
         mViewForecastButton.setOnClickListener(this);
 
     }
@@ -59,7 +44,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if (view == mViewForecastButton) {
-            //String location = mLocationEditText.getText().toSTring();
+            Intent intent = new Intent(MainActivity.this, ViewForecastActivity.class);
+            startActivity(intent);
         }
+
+        if (view == mSetConditionsButton) {
+            Intent intent = new Intent(MainActivity.this, SetConditionsActivity.class);
+            startActivity(intent);
+        }
+
     }
 }
