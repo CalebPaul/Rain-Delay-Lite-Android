@@ -12,7 +12,9 @@ import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import calebpaul.raindelay.Constants;
 import calebpaul.raindelay.R;
+import calebpaul.raindelay.services.DarkSkyService;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = MainActivity.class.getSimpleName();
@@ -44,6 +46,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if (view == mViewForecastButton) {
+            final DarkSkyService newDarkSkyService = new DarkSkyService();
+            String location = newDarkSkyService.getUserLatLong();
+            addToSharedPreferences(location);
             Intent intent = new Intent(MainActivity.this, ViewForecastActivity.class);
             startActivity(intent);
         }
@@ -53,5 +58,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
 
+    }
+
+    private void addToSharedPreferences(String location) {
+        mEditor.putString(Constants.PREFERENCES_LOCATION_KEY, location).apply();
     }
 }
