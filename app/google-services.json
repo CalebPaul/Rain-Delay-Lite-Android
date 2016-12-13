@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "428923856673",
+    "firebase_url": "https://rain-delay.firebaseio.com",
+    "project_id": "rain-delay",
+    "storage_bucket": "rain-delay.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428923856673:android:eafe8859d37527db",
+        "android_client_info": {
+          "package_name": "calebpaul.raindelay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428923856673-qhpml0j8kbika24cv9cvnt4n0h60a5qi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "calebpaul.raindelay",
+            "certificate_hash": "E485BB4A51C706C0BDBBACFB99E22AFE4D4E7756"
+          }
+        },
+        {
+          "client_id": "428923856673-tivriqmfjoju2nagf1ntr2qsutgkp2v4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0es3zelwX-b5xaErA-TTpJ27vq6TWBUM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428923856673-tivriqmfjoju2nagf1ntr2qsutgkp2v4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
