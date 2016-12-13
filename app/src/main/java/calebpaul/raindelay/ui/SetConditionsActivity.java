@@ -1,16 +1,21 @@
 package calebpaul.raindelay.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import calebpaul.raindelay.Constants;
 import calebpaul.raindelay.R;
+import calebpaul.raindelay.models.RiderProfile;
 
 public class SetConditionsActivity extends AppCompatActivity {
     @Bind(R.id.conditionName) EditText mConditionName;
@@ -57,6 +62,8 @@ public class SetConditionsActivity extends AppCompatActivity {
                     Integer maxTemp = Integer.parseInt(String.valueOf(mMaxTemp.getText()));
                     Integer minTemp = Integer.parseInt(String.valueOf(mMinTemp.getText()));
 
+                    processUserConditions(name, windSpeed, maxTemp, minTemp);
+
                     Intent intent = new Intent(SetConditionsActivity.this, ViewUserConditionsActivity.class);
 
                     intent.putExtra("name", name);
@@ -76,5 +83,14 @@ public class SetConditionsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private RiderProfile processUserConditions(String name, Integer windSpeed, Integer maxTemp, Integer minTemp) {
+        RiderProfile newProfile = new RiderProfile(name, windSpeed, maxTemp, minTemp);
+        DatabaseReference restaurantRef = FirebaseDatabase
+                .getInstance()
+                .getReference(Constants.FIREBASE_CHILD_RIDER_PROFILES);
+        restaurantRef.push().setValue(newProfile);
+        return newProfile;
     }
 }

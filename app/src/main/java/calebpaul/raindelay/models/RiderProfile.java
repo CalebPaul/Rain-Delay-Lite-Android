@@ -8,33 +8,33 @@ import org.parceler.Parcel;
 
 @Parcel
 public class RiderProfile {
-    private String mConditionName;
-    private double mWindSpeed;
-    private double mTempHi;
-    private double mTempLo;
+    private String conditionName;
+    private int windSpeed;
+    private int tempHi;
+    private int tempLo;
 
     public RiderProfile() {}
 
-    public RiderProfile(String mConditionName, double mWindSpeed, double mTempHi, double mTempLo) {
-        this.mConditionName = mConditionName;
-        this.mWindSpeed = mWindSpeed;
-        this.mTempHi = mTempHi;
-        this.mTempLo = mTempLo;
+    public RiderProfile(String conditionName, int windSpeed, int tempHi, int tempLo) {
+        this.conditionName = conditionName;
+        this.windSpeed = windSpeed;
+        this.tempHi = tempHi;
+        this.tempLo =  tempLo;
     }
 
-    public String getmConditionName() {
-        return mConditionName;
+    public String getConditionName() {
+        return conditionName;
     }
 
-    public double getmWindSpeed() {
-        return mWindSpeed;
+    public int getWindSpeed() {
+        return windSpeed;
     }
 
-    public double getmTempHi() {
-        return mTempHi;
+    public int getTempHi() {
+        return tempHi;
     }
 
-    public double getmTempLo() {
-        return mTempLo;
+    public int getTempLo() {
+        return tempLo;
     }
 }
