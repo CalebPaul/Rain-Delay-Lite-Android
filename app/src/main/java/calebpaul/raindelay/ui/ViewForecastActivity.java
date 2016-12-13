@@ -1,5 +1,6 @@
 package calebpaul.raindelay.ui;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,8 +20,10 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class ViewForecastActivity extends AppCompatActivity {
-
     public static final String TAG = ViewForecastActivity.class.getSimpleName();
+
+    private SharedPreferences mSharedPreferences;
+    private String mRecentLocation;
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     private ForecastListAdapter mAdapter;
@@ -36,6 +39,11 @@ public class ViewForecastActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_forecast);
         ButterKnife.bind(this);
+
+//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+//        mRecentLocation = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
+
+        //Log.d("Shared Pref Location", mRecentLocation);
 
         getForecasts();
     }

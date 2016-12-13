@@ -46,6 +46,7 @@ public class ForecastListAdapter extends RecyclerView.Adapter<ForecastListAdapte
     }
 
     public class ForecastViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        @Bind(R.id.timeTextView) TextView mTimeTextView;
         @Bind(R.id.summaryTextView) TextView mSummaryTextView;
         @Bind(R.id.temperatureTextView) TextView mTemperatureTextView;
         @Bind(R.id.windSpeedTextView) TextView mWindSpeedTextView;
@@ -60,6 +61,7 @@ public class ForecastListAdapter extends RecyclerView.Adapter<ForecastListAdapte
             mSummaryTextView.setText(forecast.getSummary());
             mTemperatureTextView.setText("Temp approx " + String.valueOf(forecast.getTemperature()) + " Degrees");
             mWindSpeedTextView.setText("Winds up to " + String.valueOf(forecast.getWindSpeed()) + " MPH");
+            mTimeTextView.setText("Date: " + String.valueOf(forecast.getTime()));
 
             mSummaryTextView.setOnClickListener(this);
         }
