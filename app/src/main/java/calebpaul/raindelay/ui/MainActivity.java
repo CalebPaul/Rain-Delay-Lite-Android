@@ -5,9 +5,6 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-<<<<<<< HEAD
-=======
->>>>>>> b13d16bd92b89c851fa96722780502978eb72b0b
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -51,25 +48,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Typeface Voltaire = Typeface.createFromAsset(getAssets(), "fonts/Voltaire-Regular.otf");
         mTitleText.setTypeface(Voltaire);
 
-<<<<<<< HEAD
-=======
         mSetConditionsButton.setOnClickListener(this);
->>>>>>> b13d16bd92b89c851fa96722780502978eb72b0b
+        b13d16bd92b89c851fa96722780502978eb72b0b
         mViewForecastButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         if (view == mViewForecastButton) {
-<<<<<<< HEAD
-=======
->>>>>>> b13d16bd92b89c851fa96722780502978eb72b0b
             Intent intent = new Intent(MainActivity.this, ViewForecastActivity.class);
             startActivity(intent);
         }
 
-<<<<<<< HEAD
-=======
         if (view == mSetConditionsButton) {
             Intent intent = new Intent(MainActivity.this, SetConditionsActivity.class);
             startActivity(intent);
@@ -94,7 +84,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (id == R.id.action_logout) {
             logout();
             return true;
->>>>>>> b13d16bd92b89c851fa96722780502978eb72b0b
         }
         return super.onOptionsItemSelected(item);
     }

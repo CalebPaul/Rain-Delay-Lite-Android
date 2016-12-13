@@ -12,8 +12,6 @@ public class Forecast {
     private int mRainIntensity;
     private int mWindSpeed;
 
-    public Forecast() {}
-
     public Forecast(int mTime, String mSummary, String mIcon, int mTemperature, int mRainProbability, int mRainIntensity, int mWindSpeed) {
         this.mTime = mTime;
         this.mSummary = mSummary;
