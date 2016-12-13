@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -36,30 +37,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Typeface Voltaire = Typeface.createFromAsset(getAssets(), "fonts/Voltaire-Regular.otf");
         mTitleText.setTypeface(Voltaire);
 
-        mConditionsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SetConditionsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-//        mViewForecastButton.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this, ViewForecastActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-
+        mConditionsButton.setOnClickListener(this);
         mViewForecastButton.setOnClickListener(this);
-
     }
 
     @Override
     public void onClick(View view) {
         if (view == mViewForecastButton) {
-            //String location = mLocationEditText.getText().toSTring();
+            Log.v(TAG, "CLOCK TEST");
+            Intent intent = new Intent(MainActivity.this, ViewForecastActivity.class);
+            startActivity(intent);
+        }
+
+        if (view == mConditionsButton) {
+            Intent intent = new Intent(MainActivity.this, SetConditionsActivity.class);
+            startActivity(intent);
         }
     }
 }
