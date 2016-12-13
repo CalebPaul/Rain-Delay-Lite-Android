@@ -2,18 +2,15 @@ package calebpaul.raindelay.ui;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import calebpaul.raindelay.Constants;
 import calebpaul.raindelay.R;
 import calebpaul.raindelay.adapters.ForecastListAdapter;
 import calebpaul.raindelay.models.Forecast;
@@ -43,10 +40,10 @@ public class ViewForecastActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_forecast);
         ButterKnife.bind(this);
 
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mRecentLocation = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
+//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+//        mRecentLocation = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
 
-        Log.d("Shared Pref Location", mRecentLocation);
+        //Log.d("Shared Pref Location", mRecentLocation);
 
         getForecasts();
     }
