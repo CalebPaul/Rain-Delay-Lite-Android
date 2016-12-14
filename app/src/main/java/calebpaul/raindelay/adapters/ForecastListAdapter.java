@@ -9,7 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -61,7 +64,12 @@ public class ForecastListAdapter extends RecyclerView.Adapter<ForecastListAdapte
             mSummaryTextView.setText(forecast.getSummary());
             mTemperatureTextView.setText("Temp approx " + String.valueOf(forecast.getTemperature()) + " Degrees");
             mWindSpeedTextView.setText("Winds up to " + String.valueOf(forecast.getWindSpeed()) + " MPH");
-            mTimeTextView.setText("Date: " + String.valueOf(forecast.getTime()));
+
+            String forecastTime = convertUnixTime(forecast.getTime());
+            mTimeTextView.setText(forecastTime);
+//            Log.v("FORECAST LIST ADAPTER", String.valueOf(System.currentTimeMillis()) );
+
+//            mTimeTextView.setText("Date: " + String.valueOf(forecast.getTime()));
 
             mSummaryTextView.setOnClickListener(this);
         }
@@ -71,5 +79,15 @@ public class ForecastListAdapter extends RecyclerView.Adapter<ForecastListAdapte
             Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://darksky.net"));
             mContext.startActivity(webIntent);
         }
+    }
+
+    private String convertUnixTime(long unixTime) {
+        unixTime = unixTime * 1000;
+        Date date = new Date(unixTime);
+        DateFormat formatter = new SimpleDateFormat("EEE, MMM d, ''yy");
+//        DateFormat formatter = DateFormat.getDateTimeInstance(date);
+        String formattedTime = formatter.format(date);
+
+        return formattedTime;
     }
 }
