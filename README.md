@@ -26,8 +26,7 @@ _It is designed for bike commuters who need to wake up at a different time if th
 ## Known Bugs
 
 _App is currently in process, and incomplete._
-_Latitude and longitude values for API call are currently hard coded in._
-_Retrieval of latitude and longitude from device GPS is not yet implemented._
+_Evaluation of User's Preferred Riding Conditions vs Current Weather not yet implemented._
 
 ## Specifications
 * On opening app:
