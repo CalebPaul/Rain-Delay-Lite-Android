@@ -1,10 +1,11 @@
 package calebpaul.raindelay.ui;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,8 +23,10 @@ import okhttp3.Response;
 public class ViewForecastActivity extends AppCompatActivity {
     public static final String TAG = ViewForecastActivity.class.getSimpleName();
 
-    private SharedPreferences mSharedPreferences;
-    private String mRecentLocation;
+//    private SharedPreferences mSharedPreferences;
+//    private String mRecentLocation;
+
+    private ValueEventListener mCurrentUserLocationReferenceListener;
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     private ForecastListAdapter mAdapter;
@@ -44,6 +47,8 @@ public class ViewForecastActivity extends AppCompatActivity {
 //        mRecentLocation = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
 
         //Log.d("Shared Pref Location", mRecentLocation);
+
+
 
         getForecasts();
     }
