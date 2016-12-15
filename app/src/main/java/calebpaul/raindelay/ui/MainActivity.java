@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     ,10);
         }
 
-        Log.v(TAG, "BOOLS PERMISSIONS: " + String.valueOf(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED));
+        Log.v(TAG, "BOOLS LACK PERMISSIONS?: " + String.valueOf(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED));
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
@@ -122,8 +122,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //noinspection MissingPermission
                 locationManager.requestLocationUpdates("gps", 500, 25, listener);
                 Intent intent = new Intent(MainActivity.this, ViewForecastActivity.class);
-//                intent.putExtra("userLocation", String.valueOf(userLatLong[0]));
-//                Log.v(TAG, "LOCATION PASS: " + String.valueOf(userLatLong[0]));
+//                intent.putExtra("userLocation", String.valueOf(userCurrentLatLong[0]));
+//                Log.v(TAG, "LOCATION PASS: " + String.valueOf(userCurrentLatLong[0]));
                 startActivity(intent);
             }
         });
@@ -152,9 +152,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if (view == mViewForecastButton) {
+            Log.v(TAG, "WRONG CLICKER");
 //            Intent intent = new Intent(MainActivity.this, ViewForecastActivity.class);
-//            intent.putExtra("userLocation", String.valueOf(userLatLong[0]));
-//            Log.v(TAG, "LOCATION PASS: " + String.valueOf(userLatLong[0]));
+//            intent.putExtra("userLocation", String.valueOf(userCurrentLatLong[0]));
+//            Log.v(TAG, "LOCATION PASS: " + String.valueOf(userCurrentLatLong[0]));
 //            startActivity(intent);
         }
 
@@ -164,9 +165,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void saveLocationToFirebase(String location) {
-        mSearchedLocationReference.push().setValue(location);
-    }
+//    private void saveLocationToFirebase(String location) {
+//        mSearchedLocationReference.push().setValue(location);
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
