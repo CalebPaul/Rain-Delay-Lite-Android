@@ -45,28 +45,9 @@ public class ViewForecastActivity extends AppCompatActivity {
                 .getReference()
                 .child(Constants.FIREBASE_CHILD_USER_LATLONG);
 
-//        mCurrentUserLocationListener = mUserLocationReference.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                String userCurrentLatLong = dataSnapshot.child("userLatLong").getValue().toString();
-//                Log.v(TAG, "DB RETRIEVE: " + userCurrentLatLong);
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_forecast);
         ButterKnife.bind(this);
-
-//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-//        mRecentLocation = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
-
-        //Log.d("Shared Pref Location", mRecentLocation);
-
 
         getForecasts();
     }
@@ -110,30 +91,5 @@ public class ViewForecastActivity extends AppCompatActivity {
 
             }
         });
-
-//        darkSkyService.getForecast(userCurrentLatLong, new Callback() {
-//
-//            @Override
-//            public void onFailure(Call call, IOException e) {
-//                e.printStackTrace();
-//            }
-//
-//            @Override
-//            public void onResponse(Call call, Response response) throws IOException {
-//                mForecasts = darkSkyService.processForecast(response);
-//
-//                ViewForecastActivity.this.runOnUiThread(new Runnable() {
-//
-//                    @Override
-//                    public void run() {
-//                        mAdapter = new ForecastListAdapter(getApplicationContext(), mForecasts);
-//                        mRecyclerView.setAdapter(mAdapter);
-//                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ViewForecastActivity.this);
-//                        mRecyclerView.setLayoutManager(layoutManager);
-//                        mRecyclerView.setHasFixedSize(true);
-//                    }
-//                });
-//            }
-//        });
     }
 }
