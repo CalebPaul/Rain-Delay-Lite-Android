@@ -118,12 +118,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mViewForecastButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.v(TAG, "CLICK TEST");
                 //noinspection MissingPermission
                 locationManager.requestLocationUpdates("gps", 500, 25, listener);
                 Intent intent = new Intent(MainActivity.this, ViewForecastActivity.class);
-//                intent.putExtra("userLocation", String.valueOf(userCurrentLatLong[0]));
-//                Log.v(TAG, "LOCATION PASS: " + String.valueOf(userCurrentLatLong[0]));
                 startActivity(intent);
             }
         });
@@ -144,30 +141,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 return;
             }
-            // other 'case' lines to check for other
-            // permissions this app might request
         }
     }
 
     @Override
     public void onClick(View view) {
-        if (view == mViewForecastButton) {
-            Log.v(TAG, "WRONG CLICKER");
-//            Intent intent = new Intent(MainActivity.this, ViewForecastActivity.class);
-//            intent.putExtra("userLocation", String.valueOf(userCurrentLatLong[0]));
-//            Log.v(TAG, "LOCATION PASS: " + String.valueOf(userCurrentLatLong[0]));
-//            startActivity(intent);
-        }
-
         if (view == mSetConditionsButton) {
             Intent intent = new Intent(MainActivity.this, SetConditionsActivity.class);
             startActivity(intent);
         }
     }
-
-//    private void saveLocationToFirebase(String location) {
-//        mSearchedLocationReference.push().setValue(location);
-//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
