@@ -18,6 +18,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,7 +40,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private LocationManager locationManager;
     private LocationListener listener;
 
-    @Bind(R.id.mainTitleText) TextView mTitleText;
+    Animation animFadeIn, animSlideIn;
+
+    @Bind(R.id.mainTitleText) TextView mTitleTextView;
+    @Bind(R.id.subtitleTextView) TextView mSubTitleTextView;
     @Bind(R.id.setWeatherButton) Button mSetConditionsButton;
     @Bind(R.id.viewForecastButton) Button mViewForecastButton;
     private String[] userLatLong;
@@ -55,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
 
         Typeface Voltaire = Typeface.createFromAsset(getAssets(), "fonts/Voltaire-Regular.otf");
-        mTitleText.setTypeface(Voltaire);
+        mTitleTextView.setTypeface(Voltaire);
 
         userLatLong = new String[1];
         mSetConditionsButton.setOnClickListener(this);
@@ -87,6 +92,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         };
         configure_button();
+        animFadeIn = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
+        animSlideIn = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_in);
+    }
+
+    public MainActivity fadeIn() {
+        mSubTitleTextView.setVisibility(View.VISIBLE);
+        mSubTitleTextView.startAnimation(animFadeIn);
+        return this;
+    }
+
+    public void slideIn() {
+        mTitleTextView.setVisibility(View.VISIBLE);
+        mTitleTextView.startAnimation(animSlideIn);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        fadeIn().slideIn();
     }
 
     private void configure_button() {
