@@ -22,6 +22,15 @@ import okhttp3.Response;
 public class DarkSkyService {
     public static final String TAG = DarkSkyService.class.getSimpleName();
 
+    String latitude = "45.52";
+    String longitude = "122.67";
+    String userLatLong = latitude + "," + longitude;
+    //Will get location info from phone's gps in the future.
+
+    public String getUserLatLong() {
+        return userLatLong;
+    }
+
     public static void getForecast(String userLatLong, Callback callback) {
         OkHttpClient client = new OkHttpClient.Builder().build();
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.DARKSKY_BASE_URL).newBuilder();
