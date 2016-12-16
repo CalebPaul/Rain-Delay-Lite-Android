@@ -8,6 +8,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -25,7 +27,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private DatabaseReference mSearchedLocationReference;
 
-    @Bind(R.id.mainTitleText) TextView mTitleText;
+    Animation animFadeIn;
+
+    @Bind(R.id.mainTitleText) TextView mTitleTextView;
+    @Bind(R.id.subtitleTextView) TextView mSubTitleTextView;
     @Bind(R.id.setWeatherButton) Button mSetConditionsButton;
     @Bind(R.id.viewForecastButton) Button mViewForecastButton;
 
@@ -41,10 +46,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
 
         Typeface Voltaire = Typeface.createFromAsset(getAssets(), "fonts/Voltaire-Regular.otf");
-        mTitleText.setTypeface(Voltaire);
+        mTitleTextView.setTypeface(Voltaire);
 
         mSetConditionsButton.setOnClickListener(this);
         mViewForecastButton.setOnClickListener(this);
+
+        animFadeIn = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.fade_in);
+    }
+
+    public void fadeIn() {
+
     }
 
     @Override
