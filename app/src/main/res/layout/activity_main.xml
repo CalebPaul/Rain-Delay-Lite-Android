@@ -31,7 +31,7 @@
         android:id="@+id/subtitleTextView"
         android:layout_below="@+id/mainTitleText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="40dp" />
 
     <Button
         android:id="@+id/setWeatherButton"

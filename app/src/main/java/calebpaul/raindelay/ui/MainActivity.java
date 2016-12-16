@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -28,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private DatabaseReference mSearchedLocationReference;
 
-    Animation animFadeIn;
+    Animation animFadeIn, animSlideIn;
 
     @Bind(R.id.mainTitleText) TextView mTitleTextView;
     @Bind(R.id.subtitleTextView) TextView mSubTitleTextView;
@@ -52,8 +51,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mSetConditionsButton.setOnClickListener(this);
         mViewForecastButton.setOnClickListener(this);
 
-        animFadeIn = AnimationUtils.loadAnimation(getApplicationContext(),
-                R.anim.fade_in);
+        animFadeIn = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
+        animSlideIn = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_in);
 
 
     }
@@ -61,14 +60,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onResume() {
         super.onResume();
-        fadeIn();
+        slideIn().fadeIn();
+    }
+
+    public MainActivity slideIn() {
+        mTitleTextView.setVisibility(View.VISIBLE);
+        mTitleTextView.startAnimation(animSlideIn);
+        return this;
     }
 
     public void fadeIn() {
         mSubTitleTextView.setVisibility(View.VISIBLE);
-        Log.v(TAG, "FADE IN START");
         mSubTitleTextView.startAnimation(animFadeIn);
-        Log.v(TAG, "FADE IN END");
     }
 
     @Override
