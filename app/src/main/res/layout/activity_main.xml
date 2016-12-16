@@ -28,10 +28,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Plan your commute."
-        android:id="@+id/subtitleTextView"
+        android:id="@+id/textView"
         android:layout_below="@+id/mainTitleText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="50dp" />
 
     <Button
         android:id="@+id/setWeatherButton"
