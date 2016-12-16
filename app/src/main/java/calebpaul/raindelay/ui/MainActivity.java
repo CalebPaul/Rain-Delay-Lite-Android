@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -53,10 +54,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         animFadeIn = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.fade_in);
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        fadeIn();
     }
 
     public void fadeIn() {
-
+        mSubTitleTextView.setVisibility(View.VISIBLE);
+        Log.v(TAG, "FADE IN START");
+        mSubTitleTextView.startAnimation(animFadeIn);
+        Log.v(TAG, "FADE IN END");
     }
 
     @Override
