@@ -3,6 +3,7 @@ package calebpaul.raindelay.ui;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.location.Location;
 import android.location.LocationListener;
@@ -22,6 +23,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Animation animFadeIn, animSlideIn;
 
+    @Bind(R.id.imageView) ImageView mBackgroundImageView;
     @Bind(R.id.mainTitleText) TextView mTitleTextView;
     @Bind(R.id.subtitleTextView) TextView mSubTitleTextView;
     @Bind(R.id.setWeatherButton) Button mSetConditionsButton;
@@ -57,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .child(Constants.FIREBASE_CHILD_USER_LATLONG);
 
         AppCompatDelegate.setDefaultNightMode(
-                AppCompatDelegate.MODE_NIGHT_AUTO);
+                AppCompatDelegate.MODE_NIGHT_YES);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -114,6 +117,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onResume() {
         super.onResume();
+
+        int currentNightMode = getResources().getConfiguration().uiMode
+                & Configuration.UI_MODE_NIGHT_MASK;
+        Log.v(TAG, "DAYTIME INT: " + String.valueOf(currentNightMode));
+
+        if (currentNightMode == 16) {
+            Log.v(TAG, "SOMETHING");
+            mBackgroundImageView.setBackgroundResource(R.drawable.darkbackground);
+            mBackgroundImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+
+        } else {
+            mBackgroundImageView.setBackgroundResource(R.drawable.background);
+            mBackgroundImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        }
+
         fadeIn().slideIn();
     }
 
