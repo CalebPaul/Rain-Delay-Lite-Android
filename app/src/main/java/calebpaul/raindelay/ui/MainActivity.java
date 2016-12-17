@@ -13,6 +13,7 @@ import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -54,6 +55,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .getInstance()
                 .getReference()
                 .child(Constants.FIREBASE_CHILD_USER_LATLONG);
+
+        AppCompatDelegate.setDefaultNightMode(
+                AppCompatDelegate.MODE_NIGHT_AUTO);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
