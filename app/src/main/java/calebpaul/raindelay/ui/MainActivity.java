@@ -3,6 +3,8 @@ package calebpaul.raindelay.ui;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.location.Location;
 import android.location.LocationListener;
@@ -13,6 +15,7 @@ import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -21,6 +24,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Animation animFadeIn, animSlideIn;
 
+    @Bind(R.id.imageView) ImageView mBackgroundImageView;
     @Bind(R.id.mainTitleText) TextView mTitleTextView;
     @Bind(R.id.subtitleTextView) TextView mSubTitleTextView;
     @Bind(R.id.setWeatherButton) Button mSetConditionsButton;
@@ -54,6 +59,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .getInstance()
                 .getReference()
                 .child(Constants.FIREBASE_CHILD_USER_LATLONG);
+
+        AppCompatDelegate.setDefaultNightMode(
+                AppCompatDelegate.MODE_NIGHT_AUTO);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -110,6 +118,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onResume() {
         super.onResume();
+
+        int currentDayNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        //currentDayNightMode value of 32 = Night, Value of 16 = Day.
+
+        if (currentDayNightMode == 32) {
+            //Dark Theme for Main Activity
+            mBackgroundImageView.setImageResource(R.drawable.darkbackground);
+            mBackgroundImageView.setAdjustViewBounds(true);
+            mBackgroundImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            mTitleTextView.setTextColor(Color.WHITE);
+            mSubTitleTextView.setTextColor(Color.WHITE);
+            mSetConditionsButton.setTextColor(Color.WHITE);
+            mSetConditionsButton.setBackgroundColor(Color.DKGRAY);
+            mViewForecastButton.setTextColor(Color.WHITE);
+            mViewForecastButton.setBackgroundColor(Color.DKGRAY);
+
+        } else {
+            //Light Theme for Main Activity
+            mBackgroundImageView.setImageResource(R.drawable.background);
+            mBackgroundImageView.setAdjustViewBounds(true);
+            mBackgroundImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        }
+
         fadeIn().slideIn();
     }
 

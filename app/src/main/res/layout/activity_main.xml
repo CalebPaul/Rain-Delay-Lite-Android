@@ -8,10 +8,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:adjustViewBounds="true"
-        android:id="@+id/imageView"
-        android:src="@drawable/background"
-        android:scaleType="centerCrop" />
+        android:id="@+id/imageView" />
 
     <TextView
         android:id="@+id/mainTitleText"
@@ -31,7 +28,7 @@
         android:id="@+id/subtitleTextView"
         android:layout_below="@+id/mainTitleText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="30dp" />
 
     <Button
         android:id="@+id/setWeatherButton"
