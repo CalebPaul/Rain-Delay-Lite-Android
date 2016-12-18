@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.location.Location;
 import android.location.LocationListener;
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .child(Constants.FIREBASE_CHILD_USER_LATLONG);
 
         AppCompatDelegate.setDefaultNightMode(
-                AppCompatDelegate.MODE_NIGHT_YES);
+                AppCompatDelegate.MODE_NIGHT_AUTO);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -118,17 +119,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onResume() {
         super.onResume();
 
-        int currentNightMode = getResources().getConfiguration().uiMode
-                & Configuration.UI_MODE_NIGHT_MASK;
-        Log.v(TAG, "DAYTIME INT: " + String.valueOf(currentNightMode));
+        int currentDayNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        //currentDayNightMode value of 32 = Night, Value of 16 = Day.
 
-        if (currentNightMode == 16) {
-            Log.v(TAG, "SOMETHING");
-            mBackgroundImageView.setBackgroundResource(R.drawable.darkbackground);
+        if (currentDayNightMode == 32) {
+            //Dark Theme for Main Activity
+            mBackgroundImageView.setImageResource(R.drawable.darkbackground);
+            mBackgroundImageView.setAdjustViewBounds(true);
             mBackgroundImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            mTitleTextView.setTextColor(Color.WHITE);
+            mSubTitleTextView.setTextColor(Color.WHITE);
+            mSetConditionsButton.setTextColor(Color.WHITE);
+            mSetConditionsButton.setBackgroundColor(Color.DKGRAY);
+            mViewForecastButton.setTextColor(Color.WHITE);
+            mViewForecastButton.setBackgroundColor(Color.DKGRAY);
 
         } else {
-            mBackgroundImageView.setBackgroundResource(R.drawable.background);
+            //Light Theme for Main Activity
+            mBackgroundImageView.setImageResource(R.drawable.background);
+            mBackgroundImageView.setAdjustViewBounds(true);
             mBackgroundImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         }
 
