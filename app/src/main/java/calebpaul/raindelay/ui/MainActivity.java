@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mBackgroundImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         }
 
-        fadeIn().slideIn();
+        fadeIn();
     }
 
     private void configure_button() {
