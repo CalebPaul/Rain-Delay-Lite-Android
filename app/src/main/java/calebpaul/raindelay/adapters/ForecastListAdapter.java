@@ -62,8 +62,14 @@ public class ForecastListAdapter extends RecyclerView.Adapter<ForecastListAdapte
 
         public void bindForecast(Forecast forecast) {
             mSummaryTextView.setText(forecast.getSummary());
-            mTemperatureTextView.setText("Temp approx " + String.valueOf(forecast.getTemperature()) + " Degrees");
-            mWindSpeedTextView.setText("Winds up to " + String.valueOf(forecast.getWindSpeed()) + " MPH");
+            mTemperatureTextView.setText("Temp approx " + String.valueOf(forecast.getTemperature()) + " °F");
+
+            if (forecast.getWindSpeed() == 0) {
+                mWindSpeedTextView.setText("No Wind");
+            } else {
+                mWindSpeedTextView.setText("Winds up to " + String.valueOf(forecast.getWindSpeed()) + " MPH");
+            }
+
 
             String forecastTime = convertUnixTime(forecast.getTime());
             mTimeTextView.setText(forecastTime);
